@@ -4,8 +4,8 @@ from streamlit_chat import message
 import os
 #from langchain.callbacks import get_openai_callback
 import weaviate
-#import requests
-#import json
+import requests
+import json
 st.title("ÜMA Chatbot")
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -136,13 +136,12 @@ if prompt := st.chat_input(''):
             full_response += o.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
 
-        # data = {
-        # "pregunta": prompt,
-        # "respuesta": full_response,
-        # "contexto": context,
-        # }
-        # json_data = json.dumps(data)
+        data = {
+        "pregunta": prompt,
+        "respuesta": full_response,
+        }
+        json_data = json.dumps(data)
 
-        #requests.post('https://script.google.com/macros/s/AKfycbzciDY8MiYHxPB32zuwF_k9NtR7C-53LFD0_mpDbH3mYeM9eV61grynl7fwEoWco2_t/exec?action=addUser', data=json_data)
+        requests.post('https://script.google.com/macros/s/AKfycbw9sEDWmHD-VnIs418ms1WidONEjRY8iMy6M8rkrONq8xPadUJ4zEG-6TXTPxFamdIF/exec?action=addUser', data=json_data)
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
