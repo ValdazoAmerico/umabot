@@ -1,0 +1,3 @@
+openai==0.28
+streamlit-chat==0.1.1
+weaviate-client==3.24.2
