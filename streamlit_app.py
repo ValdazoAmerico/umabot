@@ -10,9 +10,9 @@ st.title("ÜMA Chatbot")
 
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-auth_config = weaviate.AuthApiKey(api_key='oY9JKo3TiX0ohdCiDOkYQM0uD17T5FOxRjpJ')  # Replace w/ your Weaviate instance API key
+auth_config = weaviate.AuthApiKey(api_key='B8atxfRmSj6Z9PGnbO4q5YGP3vM6p2g8uSWp')  # Replace w/ your Weaviate instance API key
 
-url='https://umabot-2yadwdn9.weaviate.network'
+url='https://umabot-dcgnw2x6.weaviate.network'
 
 # Instantiate the client
 client = weaviate.Client(
